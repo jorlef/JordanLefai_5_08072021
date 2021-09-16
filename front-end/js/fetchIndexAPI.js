@@ -22,6 +22,6 @@ fetch("http://localhost:3000/api/teddies")
         }
     })
     .catch(function (err) {
-        var errorhtml = '<li class="p-2">Erreur lors de la récupération des informations, rechargez la page</li>';
+        var errorhtml = '<li class="p-3 mb-2 rounded-pill bg-white">Erreur lors de la récupération des informations, rechargez la page</li>';
         document.getElementById("itemsList").innerHTML += errorhtml;
     })
