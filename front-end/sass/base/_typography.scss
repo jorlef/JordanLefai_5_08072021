@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Belligerent Madness";
+    src: url("../fonts/belligerent.woff") format("woff"),
+   }
+
+.header{
+
+    &__brand {
+        font-size: 48px;
+        font-family: "Belligerent Madness", sans-serif;
+    }
+}

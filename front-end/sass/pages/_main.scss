@@ -1,0 +1,33 @@
+.main {
+    background: linear-gradient(180deg, rgba(231,145,24,0.05) 0%, rgba(157,107,239,0.05) 100%);
+    min-height: 80vh;
+    padding: 60px 10%;
+
+    &__list {
+        gap: 25px;   
+    }
+
+    &__listElement {
+        overflow: hidden;
+        flex-basis: 40%;
+        flex-grow: 0;
+        min-width: 250px;
+        border-radius: 25px;
+        background-color: rgba(243, 233, 241, 0.8);
+        box-shadow: 3px 3px 5px 2px gray;
+        transition: all ease-in-out 200ms;
+
+        &:hover {
+            transition: all ease-in-out 200ms;
+            box-shadow: 6px 6px 5px 2px gray;
+            transform: translate(-3px, -2px);
+        }
+    }
+
+    &__illustImg {
+        object-fit: cover;
+        width: 100%;
+        height: 300px;
+    }
+}
+

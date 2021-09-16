@@ -1,7 +1,9 @@
-@import "./utils/";  
-@import "./vendors/";  
-@import "./base/";  
-@import "./components/";  
-@import "./layouts/";  
-@import "./pages/";  
-@import "./themes/"; 
+// @import "./utils/";  
+// @import "./vendors/";  
+@import "./base/reset";  
+@import "./base/typography";  
+// @import "./components/";  
+@import "./layouts/header";  
+@import "./layouts/footer";  
+@import "./pages/main";  
+// @import "./themes/"; 

@@ -1,0 +1,25 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+    /* reset bootstrap hover link */
+    &:hover {
+        color: black;
+    }
+}
+
+/* reset bootstrap list margin values */
+dl, ol, ul {
+    margin-bottom: 0;
+}
+
+ol, ul {
+    padding-left: 0;
+}
+
