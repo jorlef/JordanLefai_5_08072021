@@ -1,0 +1,12 @@
+{
+  "name": "front-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "sassfiles": "mkdir sass\\base sass\\utils sass\\layouts sass\\components sass\\pages sass\\themes sass\\vendors && echo @import \"./utils/\"; > sass/main.scss && echo . && echo @import \"./vendors/\"; >> sass/main.scss && echo . && echo @import \"./base/\"; >> sass/main.scss && echo . && echo @import \"./components/\"; >> sass/main.scss && echo . && echo @import \"./layouts/\"; >> sass/main.scss && echo . && echo @import \"./pages/\"; >> sass/main.scss && echo . && echo @import \"./themes/\"; >> sass/main.scss"
+  },
+  "author": "",
+  "license": "ISC"
+}
