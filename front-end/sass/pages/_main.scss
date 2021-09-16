@@ -55,5 +55,13 @@
         width: 100%;
         height: 300px;
     }
+
+    &__cartElement {
+        overflow: hidden;
+        border-radius: 25px;
+        background-color: rgba(243, 233, 241, 0.8);
+        box-shadow: 3px 3px 5px 2px gray;
+        transition: all ease-in-out 200ms;
+    }
 }
 
