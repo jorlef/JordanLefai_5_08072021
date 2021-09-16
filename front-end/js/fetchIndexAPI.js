@@ -11,7 +11,7 @@ fetch("http://localhost:3000/api/teddies")
                 <li class="main__listElement">
                     <a href="./pages/product.html?id=${product._id}">
                         <img src="${product.imageUrl}" class="main__illustImg">
-                        <div class="p-3 d-flex flex-row justify-content-between align-items-center">
+                        <div class="px-3 py-2 d-flex flex-row justify-content-between align-items-center">
                             <h2>${product.name}</h2>
                             <span>${product.price/100}€</span>
                         </div>
