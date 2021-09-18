@@ -8,9 +8,6 @@ for (let teddiesList of splitString) {
         return res.json();
     })
     .then(function (data) {
-        // console.log(data);
-        // console.log(data.colors);
-
         let appendhtml = `
             <li class="w-50 main__cartElement m-3">
                 <img src="${data.imageUrl}" class="img-fluid">
