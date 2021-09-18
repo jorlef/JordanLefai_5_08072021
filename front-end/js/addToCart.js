@@ -1,12 +1,16 @@
-// add if later to check for duplicate
 function getProductId(getId) {
-    var getLocalStorage = localStorage.getItem("products");
-    var items = [];
+  let getLocalStorage = localStorage.getItem("products");
+  let items = [];
 
-    if (getLocalStorage !== null) {
-        items.push(localStorage.getItem("products"))
-    }
-
+  if (getLocalStorage == null) {
     items.push(getId);
     localStorage.setItem("products", items);
+  } 
+  else {
+    if (getLocalStorage.includes(getId) == false) {
+      items.push(localStorage.getItem("products"));
+      items.push(getId);
+      localStorage.setItem("products", items);
+    }
+  }
 }
