@@ -1,4 +1,5 @@
-function getProductId(getId) {
+function getProductId() {
+  let getId = urlGetParams("id");
   let getLocalStorage = localStorage.getItem("products");
   let items = [];
 
