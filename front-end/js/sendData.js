@@ -16,7 +16,7 @@ function transformDataForSend() {
   objectFinal["contact"] = objectToSend;
   objectFinal["products"] = arrayToSend;
 
-  return (objectFinal)
+  return (objectFinal);
 }
 
 function finalConfirm() {
@@ -45,11 +45,14 @@ function finalConfirm() {
     .then((showSuccess) => {
       console.log(showSuccess);
       console.log(showSuccess.orderId);
-      appendhtml = `<span>Votre commande n°${showSuccess.orderId} a bien été enregistrée.</span>`;
+      let totalPrice = 0;
+      for (let x= 0; x < showSuccess.products.length; x++) {
+        totalPrice += showSuccess.products[x].price;
+      }
+      appendhtml = `<span>Votre commande <strong>n°${showSuccess.orderId}</strong> d'un montant de <strong>${totalPrice/100}€</strong> a bien été enregistrée.</span>`;
       document.getElementById("showMessage").innerHTML = appendhtml;
-      localStorage.removeItem("*");
+      // localStorage.removeItem("products");
     })
-    // then delete products in localStorage
     .catch((err) => {
       // if (err === "server") return;
       // console.log(err);
