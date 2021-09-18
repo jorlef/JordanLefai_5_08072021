@@ -7,9 +7,6 @@ fetch("http://localhost:3000/api/teddies/" + getId)
     return res.json();
 })
 .then(function (data) {
-    // console.log(data);
-    // console.log(data.colors);
-
     let appendhtml = `
         <div>
             <img src="${data.imageUrl}" class="main__productImg">
@@ -31,6 +28,7 @@ fetch("http://localhost:3000/api/teddies/" + getId)
         </div>
     `;
     document.getElementById("product").innerHTML = appendhtml;
+    document.title = `Orinoco - Ours ${data.name}`
 
     for (let listChoice of data.colors) {
         console.log(listChoice);
