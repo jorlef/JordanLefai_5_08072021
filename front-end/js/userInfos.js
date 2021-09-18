@@ -54,7 +54,11 @@ function userInfo () {
         document.getElementById('errorMessage').innerHTML += `<span class="d-block">Veuillez rentrez une valeur valide pour votre Mail</span>`;
     }
 
-    if (checkForRedirect == 5) {
+    if (localStorage.getItem("products") == null) {
+        document.getElementById('errorMessage').innerHTML += `<span class="d-block">Veuillez remplir votre panier avant de passer commande</span>`;
+    }
+
+    if (checkForRedirect == 5 && localStorage.getItem("products") !== null) {
         location.href = "./confirm_order.html"
     }
     
