@@ -35,7 +35,7 @@ function showProduct() {
             </select>
           </div>
           <div class="mt-4 text-center">
-            <button onclick="getProductId()" class="px-2 mb-4 rounded-pill">Commander</button>
+            <button onclick="addToCart()" class="px-2 mb-4 rounded-pill">Commander</button>
           </div>
         </div>
         `;

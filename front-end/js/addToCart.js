@@ -1,5 +1,5 @@
 // function to add product to the cart
-function getProductId() {
+function addToCart() {
   let getId = urlGetParams("id");
   let getLocalStorage = localStorage.getItem("products");
   let items = [];
