@@ -1,3 +1,4 @@
+// function that return object to send to backend from localStorage
 function transformDataForSend() {
   let objectToSend = {};
   let arrayToSend = [];
@@ -16,13 +17,12 @@ function transformDataForSend() {
   objectFinal["contact"] = objectToSend;
   objectFinal["products"] = arrayToSend;
 
-  return (objectFinal);
+  return objectFinal;
 }
 
-function finalConfirm() {
+// function that send POST request and show price and order_id
+function sendToBackend() {
   let objectFinal = transformDataForSend();
-
-  console.log(objectFinal);
 
   fetch("http://localhost:3000/api/teddies/order", {
     mode: "cors",
@@ -33,8 +33,8 @@ function finalConfirm() {
     },
     body: JSON.stringify(objectFinal),
   })
+    // check the resp status and if ok convert response to json
     .then((resp) => {
-      console.log(resp);
       if (resp.status === 200 || resp.status === 201) {
         return resp.json();
       } else {
@@ -42,22 +42,22 @@ function finalConfirm() {
         return Promise.reject("server");
       }
     })
+    // show price and order_id then clear localStorage
     .then((showSuccess) => {
-      console.log(showSuccess);
-      console.log(showSuccess.orderId);
       let totalPrice = 0;
-      for (let x= 0; x < showSuccess.products.length; x++) {
+
+      for (let x = 0; x < showSuccess.products.length; x++) {
         totalPrice += showSuccess.products[x].price;
       }
-      appendhtml = `<span>Votre commande <strong>n°${showSuccess.orderId}</strong> d'un montant de <strong>${totalPrice/100}€</strong> a bien été enregistrée.</span>`;
-      document.getElementById("showMessage").innerHTML = appendhtml;
-      // localStorage.removeItem("products");
+
+      document.getElementById("showMessage").innerHTML = `<span>Votre commande <strong>n°${showSuccess.orderId}</strong> d'un montant de <strong>${totalPrice / 100}€</strong> a bien été enregistrée.</span>`;
+
+      localStorage.clear();
     })
+    // show a message when there is an error in the request
     .catch((err) => {
-      // if (err === "server") return;
-      // console.log(err);
       document.getElementById("showMessage").innerHTML = `<span>Votre commande n'a pas pu aboutir</span>`;
     });
 }
 
-finalConfirm();
+sendToBackend();
