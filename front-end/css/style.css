@@ -1,0 +1,120 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  /* reset bootstrap hover link */
+}
+a:hover {
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+/* reset bootstrap list margin values */
+dl, ol, ul {
+  margin-bottom: 0;
+}
+
+ol, ul {
+  padding-left: 0;
+}
+
+@font-face {
+  font-family: "Belligerent Madness";
+  src: url("../fonts/belligerent.woff") format("woff");
+}
+.header__brand {
+  font-size: 48px;
+  font-family: "Belligerent Madness", sans-serif;
+}
+
+.header {
+  position: relative;
+  height: 100px;
+  z-index: 5;
+  padding: 10px;
+  background-color: #f3e9f1;
+  box-shadow: 0 0 5px 2px gray;
+}
+.header__logo {
+  height: 48px;
+}
+.header__cart {
+  font-size: 24px;
+  color: #ab659d;
+}
+
+.footer {
+  position: relative;
+  z-index: 5;
+  min-height: 100px;
+  background-color: #f3e9f1;
+  box-shadow: 0 0 5px 2px gray;
+}
+
+.main {
+  background: linear-gradient(180deg, rgba(231, 145, 24, 0.05) 0%, rgba(157, 107, 239, 0.05) 100%);
+  min-height: 80vh;
+  padding: 60px 10%;
+}
+.main__list {
+  gap: 25px;
+}
+.main__listElement {
+  overflow: hidden;
+  flex-basis: 40%;
+  flex-grow: 0;
+  min-width: 250px;
+  border-radius: 25px;
+  background-color: rgba(243, 233, 241, 0.8);
+  box-shadow: 3px 3px 5px 2px gray;
+  transition: all ease-in-out 200ms;
+}
+.main__listElement:hover {
+  transition: all ease-in-out 200ms;
+  box-shadow: 6px 6px 5px 2px gray;
+  transform: translate(-3px, -2px);
+}
+.main__illustImg {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+.main__productSection {
+  background-color: white;
+  border-radius: 25px;
+  background-color: rgba(243, 233, 241, 0.8);
+  box-shadow: 3px 3px 5px 2px gray;
+}
+.main__productLine {
+  position: relative;
+}
+.main__productLine::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-color: gray;
+  height: 2px;
+  width: 100%;
+}
+.main__productImg {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+.main__cartElement {
+  overflow: hidden;
+  border-radius: 25px;
+  background-color: rgba(243, 233, 241, 0.8);
+  box-shadow: 3px 3px 5px 2px gray;
+  transition: all ease-in-out 200ms;
+}
+
+/*# sourceMappingURL=style.css.map */
