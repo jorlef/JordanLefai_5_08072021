@@ -31,7 +31,7 @@ function showProduct() {
           </div>
           <div class="my-3 text-center">
             <label for="quantity">Quantité (1-20)</label>
-            <input type="number" id="quantity" name="quantity" min="1" max="20" value="1" class="pl-2">
+            <input type="number" id="quantity" name="quantity" min="1" max="20" value="1" class="main__quantity ps-2">
           </div>
           <div class="my-3 text-center">
             <label for="teddycolor" class="pb-2">Couleur :</label>
