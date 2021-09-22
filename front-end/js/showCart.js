@@ -9,6 +9,7 @@ if (localStorage.getItem("products") == null) {
   const cartContent = localStorage.getItem("products");
   //split string of localStorage to get each products in an array
   const splitString = cartContent.split(",");
+  let totalPrice = 0;
 
   // loop to show the list of each products in the cart from localStorage
   for (let teddiesList of splitString) {
@@ -25,10 +26,12 @@ if (localStorage.getItem("products") == null) {
                 <img src="${data.imageUrl}" class="img-fluid">
                 <div class="px-3 py-2 d-flex flex-row justify-content-between align-items-center">
                     <h2>${data.name}</h2>
-                    <p>${data.price / 100}€</p>
+                    <p><strong>${data.price / 100}€</strong></p>
                 </div>
             </li>
             `;
+        totalPrice += data.price;
+        document.getElementById("main__price").innerHTML = `Prix total : <strong>${totalPrice/100}€</strong>`;
       })
 
       // show a message when there is an error in the request
