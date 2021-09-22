@@ -5,12 +5,12 @@ function transformDataForSend() {
   let objectFinal = {};
 
   for (let entriesStorage of Object.entries(localStorage)) {
-    if (entriesStorage.includes("products") == false) {
+    if (entriesStorage.includes("products")) {
+      arrayToSend = entriesStorage[1].split(",");
+    } else {
       let key = entriesStorage[0];
       let value = entriesStorage[1];
       objectToSend[key] = value;
-    } else {
-      arrayToSend = entriesStorage[1].split(",");
     }
   }
 
