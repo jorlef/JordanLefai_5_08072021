@@ -17,9 +17,10 @@ function showProduct() {
     })
     // change the title of the page and show the product
     .then(function (data) {
-      document.title = `Orinoco - Ours ${data.name}`;
+      if (data._id === getId) {
+        document.title = `Orinoco - Ours ${data.name}`;
 
-      document.getElementById("product").innerHTML = `
+        document.getElementById("product").innerHTML = `
         <div>
           <img src="${data.imageUrl}" class="main__productImg">
         </div>
@@ -40,9 +41,13 @@ function showProduct() {
         </div>
         `;
 
-      // loop to get each choice of colors
-      for (let listChoice of data.colors) {
-        document.getElementById("teddycolor").innerHTML += `<option value="${listChoice.toLowerCase()}">${listChoice}</option>`;
+        // loop to get each choice of colors
+        for (let listChoice of data.colors) {
+          document.getElementById("teddycolor").innerHTML += `<option value="${listChoice.toLowerCase()}">${listChoice}</option>`;
+        }
+      }
+      else {
+        document.getElementById("product").innerHTML = `<span class="p-3 my-2 bg-white rounded-pill mx-auto">Id invalide, veuillez choisir un produit valide</span>`
       }
     })
 
