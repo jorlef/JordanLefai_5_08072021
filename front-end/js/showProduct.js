@@ -30,6 +30,10 @@ function showProduct() {
             <p class="m-0 mb-2"><strong>${data.price / 100}€</strong></p>
           </div>
           <div class="my-3 text-center">
+            <label for="quantity">Quantité (1-20)</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="20" value="1" class="pl-2">
+          </div>
+          <div class="my-3 text-center">
             <label for="teddycolor" class="pb-2">Couleur :</label>
             <select name="color" id="teddycolor">
               <option value="">--Choix de la couleur</option>
