@@ -109,6 +109,9 @@ ol, ul {
   width: 100%;
   height: 300px;
 }
+.main__quantity {
+  width: 60px;
+}
 .main__cartElement {
   overflow: hidden;
   border-radius: 25px;
