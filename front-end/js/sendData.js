@@ -5,7 +5,7 @@ function transformDataForSend() {
   let objectFinal = {};
 
   for (let entriesStorage of Object.entries(localStorage)) {
-    if (entriesStorage.includes("products")) {
+    if (entriesStorage[0].includes("products")) {
       arrayToSend = entriesStorage[1].split(",");
     } else {
       let key = entriesStorage[0];
@@ -23,6 +23,7 @@ function transformDataForSend() {
 // function that send POST request and show price and order_id
 function sendToBackend() {
   let objectFinal = transformDataForSend();
+  console.log(objectFinal)
 
   fetch("http://localhost:3000/api/teddies/order", {
     mode: "cors",
